@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Use dark theme variables as default since the app is primarily dark */
+  --background: hsl(0, 0%, 10%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(220, 7%, 12%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(0, 0%, 18%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 18%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(16, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 18%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(16, 100%, 60%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* Custom colors for the movie app */
+  --app-primary: hsl(0, 0%, 10%);
+  --app-secondary: hsl(0, 0%, 18%);
+  --app-accent: hsl(16, 100%, 60%);
+  --app-gray-850: hsl(220, 7%, 12%);
+  --app-gray-750: hsl(220, 7%, 16%);
+  
+  /* Gradient backgrounds */
+  --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(220, 14%, 14%) 35%, hsl(16, 100%, 10%) 100%);
+  --gradient-secondary: linear-gradient(45deg, hsl(16, 100%, 8%) 0%, hsl(220, 14%, 12%) 50%, hsl(280, 40%, 12%) 100%);
+  --gradient-accent: linear-gradient(90deg, hsl(16, 100%, 60%) 0%, hsl(40, 100%, 55%) 50%, hsl(16, 100%, 60%) 100%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 10%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(220, 7%, 12%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(0, 0%, 18%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 18%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(0, 0%, 10%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(210, 40%, 18%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(16, 100%, 60%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--app-primary);
+    color: hsl(0, 0%, 98%);
+  }
+}
+
+/* Custom utility classes */
+.bg-app-primary {
+  background-color: var(--app-primary);
+}
+
+.bg-app-secondary {
+  background-color: var(--app-secondary);
+}
+
+.bg-app-accent {
+  background-color: var(--app-accent);
+}
+
+.bg-app-gray-850 {
+  background-color: var(--app-gray-850);
+}
+
+/* Hide scrollbars for genre rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.bg-app-gray-750 {
+  background-color: var(--app-gray-750);
+}
+
+.text-app-accent {
+  color: var(--app-accent);
+}
+
+/* Gradient background utilities */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient backgrounds */
+.bg-animated-gradient {
+  background: linear-gradient(-45deg, 
+    hsl(0, 0%, 8%), 
+    hsl(220, 14%, 14%), 
+    hsl(16, 100%, 10%), 
+    hsl(280, 40%, 12%),
+    hsl(16, 80%, 12%)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle overlay patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(255, 153, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 153, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 153, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.border-app-gray-700 {
+  border-color: hsl(220, 7%, 27%);
+}
+
+.hover\:bg-app-accent:hover {
+  background-color: var(--app-accent);
+}
+
+.hover\:text-app-accent:hover {
+  color: var(--app-accent);
+}
+
+/* Custom animations for movie cards */
+@keyframes movie-card-hover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.movie-card-hover {
+  transition: transform 0.2s ease;
+}
+
+.movie-card-hover:hover {
+  animation: movie-card-hover 0.2s ease forwards;
+}
+
+/* Backdrop blur utility */
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Pure dark mode overrides */
+.pure-dark-mode .bg-animated-gradient {
+  background: #000000 !important;
+  animation: none !important;
+}
+
+.pure-dark-mode .bg-dot-pattern {
+  background-image: none !important;
+}
+
+.pure-dark-mode .bg-gradient-to-br,
+.pure-dark-mode .bg-gradient-to-r,
+.pure-dark-mode .bg-gradient-to-l,
+.pure-dark-mode .bg-gradient-to-t,
+.pure-dark-mode .bg-gradient-to-b {
+  background: #000000 !important;
+}
+
+.pure-dark-mode [class*="bg-gradient"] {
+  background: #000000 !important;
+}
+
+.pure-dark-mode .backdrop-blur-sm {
+  backdrop-filter: none !important;
+}
+
+.pure-dark-mode .bg-app-gray-800,
+.pure-dark-mode .bg-gray-800 {
+  background-color: #1a1a1a !important;
+}
+
+.pure-dark-mode .bg-app-gray-700,
+.pure-dark-mode .bg-gray-700 {
+  background-color: #111111 !important;
+}
