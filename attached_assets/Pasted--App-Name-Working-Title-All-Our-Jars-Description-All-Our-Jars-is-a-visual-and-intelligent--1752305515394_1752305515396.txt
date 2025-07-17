@@ -1,0 +1,46 @@
+📦 App Name (Working Title): All Our Jars
+
+📝 Description
+
+All Our Jars is a visual and intelligent catalogue app for movie enthusiasts — especially those who collect physical media formats like LaserDiscs, VHS, DVDs, and Blu-rays. Designed for retro collectors, the app helps users easily archive, browse, and manage their media library from any device.
+
+The app scrapes metadata from trusted online databases (such as TMDb, LDDB, and Blu-ray.com) and organizes collections by format, genre, and custom tags. It also includes AI-powered metadata generation and manual entry options for obscure or unlisted items.
+
+🔧 Key Features
+
+Automatic Metadata Scraping
+Retrieves cover art, title, year, director, cast, and genres from external databases (TMDb, LDDB, Blu-ray.com, etc.).
+
+AI Fallback (Optional)
+If no data is found, the app can use AI to auto-generate metadata as a backup — title, genres, description, and more.
+
+Manual Metadata Input
+Users can fully customize or enter metadata themselves, giving control over niche or personal items.
+
+Multi-Category Filtering
+Dynamic genre filtering works like Netflix — instantly re-categorize your collection by Romance, Action, Drama, etc.
+
+Storage Location Tracking
+Assign and search by physical location (e.g., “Attic box B2” or “Shelf 3, binder page 4”).
+
+Resale Value Field
+Add or estimate current resale value per item, great for insurance, trade, or valuation purposes.
+
+Barcode Scanning Support
+Scan UPC/EAN barcodes from physical media to auto-fetch or match entries.
+
+Catalog Number Support
+Search or input LaserDisc or VHS-specific identifiers (e.g., LDV-13007) for deeper database matching.
+
+Image Uploads (Future Feature)
+Users can submit custom cover photos for items not found in databases, gradually building a community-driven media index.
+
+API Endpoints
+
+POST /add — Add a new item (scraped, AI, or manual)
+
+GET /collection — Get full collection
+
+GET /filter?genre=Drama — Filter by genre
+
+GET /search?barcode=xxx or catalogId=xxx — Search by ID

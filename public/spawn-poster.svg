@@ -1,0 +1,27 @@
+<svg width="300" height="450" viewBox="0 0 300 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="450" fill="#1A1A1A"/>
+  <rect width="300" height="450" fill="url(#grad)"/>
+  
+  <!-- Dark demon silhouette -->
+  <path d="M150 100 L120 150 L100 200 L90 250 L100 300 L120 330 L150 350 L180 330 L200 300 L210 250 L200 200 L180 150 Z" fill="#FF0000" opacity="0.3"/>
+  
+  <!-- Cape/wings effect -->
+  <path d="M50 200 Q100 180 150 200 Q200 180 250 200 Q220 250 150 230 Q80 250 50 200" fill="#800000" opacity="0.4"/>
+  
+  <!-- Title -->
+  <text x="150" y="380" text-anchor="middle" fill="#FF6600" font-size="48" font-weight="bold" font-family="Arial, sans-serif">SPAWN</text>
+  <text x="150" y="410" text-anchor="middle" fill="#FFFFFF" font-size="18" font-family="Arial, sans-serif">(1997)</text>
+  
+  <!-- Chains effect -->
+  <circle cx="120" cy="180" r="3" fill="#666666"/>
+  <circle cx="180" cy="180" r="3" fill="#666666"/>
+  <line x1="120" y1="180" x2="180" y2="180" stroke="#666666" stroke-width="2"/>
+  
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A2A2A"/>
+      <stop offset="50%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#1A0000"/>
+    </linearGradient>
+  </defs>
+</svg>
